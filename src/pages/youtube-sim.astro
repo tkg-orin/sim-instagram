@@ -1,0 +1,178 @@
+---
+import ArticleLayout from "../layouts/ArticleLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import RelatedArticles from "../components/RelatedArticles.astro";
+import CTAButton from "../components/CTAButton.astro";
+import CTABox from "../components/CTABox.astro";
+
+const relatedArticles = [
+  {
+    title: "YouTubeのデータ消費について",
+    description: "YouTubeはどれくらいギガを使う？画質別・1時間あたりの通信量を解説。",
+    href: "/youtube-data"
+  }
+];
+---
+
+<ArticleLayout
+  title="YouTubeにおすすめの格安SIMは？実はカウントフリーは1社だけ"
+  description="YouTubeをよく使う人向けに格安SIMを比較。実はYouTubeのカウントフリー対応はBIGLOBEモバイルのみ。その理由と料金、注意点を詳しく解説します。"
+>
+  <Header slot="header" />
+  <Footer slot="footer" />
+
+  <Breadcrumb current="YouTubeの格安SIM紹介" />
+
+  <article>
+    <h1>YouTubeにおすすめの格安SIMは？</h1>
+
+    <p>
+      YouTubeは画質次第で<strong>1時間あたり1〜3GB</strong>消費する、  
+      非常に通信量の多いサービスです。
+    </p>
+
+    <p>
+      そのため「YouTubeをよく見る人ほど、どのSIMを選ぶか」が  
+      月々の通信費に大きく影響します。
+    </p>
+
+    <h2>結論：YouTubeのカウントフリーは1キャリアしかない</h2>
+
+    <p>
+      実は、<strong>YouTubeを正式にカウントフリー対応している格安SIMは1社のみ</strong>です。
+    </p>
+
+    <p>
+      それが <strong>BIGLOBEモバイル</strong> です。
+    </p>
+
+    <h2>カウントフリーとは？</h2>
+
+    <p>
+      カウントフリーとは、特定のアプリやサービスの通信量を  
+      <strong>月間データ容量にカウントしない</strong>、または大幅に軽減する仕組みです。
+    </p>
+
+    <p>
+      YouTubeのような動画サービスをカウントフリーで使えると、  
+      <strong>月30GB以上の通信量が実質ほぼゼロ扱い</strong>になるため、  
+      圧倒的なコストパフォーマンスを発揮します。
+    </p>
+
+    <h2>BIGLOBEモバイル（YouTubeカウントフリー対応）</h2>
+
+    <ul>
+      <li>3GB 音声通話＋SMS</li>
+      <li>エンタメフリー・オプション対応</li>
+      <li>YouTube / ABEMA / U-NEXT などがカウントフリー</li>
+      <li>月額：約1,700円</li>
+    </ul>
+
+    <p>
+      カウントフリーを利用すれば、  
+      <strong>YouTubeを何時間見てもデータ容量はほぼ消費しません。</strong>
+    </p>
+
+    <p>
+      通信品質を除けば、  
+      <strong>YouTube用途では最強クラスの格安SIM</strong>と言えます。
+    </p>
+
+    <p>
+      実際に<strong>筆者自身もこのプランを利用</strong>していますが、  
+      YouTube中心の使い方であれば満足度は非常に高いです。
+    </p>
+
+    <p><strong>注意点：</strong>一部エリアでは通信が不安定になる場合あり</p>
+
+    <CTAButton
+      href="ここにBIGLOBEモバイルのアフィリエイトリンク"
+      label="BIGLOBEモバイル公式サイトで詳細を確認"
+      note="※エンタメフリー・オプションは別途申込が必要です"
+    />
+
+    <h2>YouTubeカウントフリー非対応の格安SIM</h2>
+
+    <p>
+      YouTubeのカウントフリーに対応していない場合、  
+      <strong>30GB前後の大容量プラン</strong>が必要になります。
+    </p>
+
+    <h3>ahamo</h3>
+    <ul>
+      <li>30GB 音声通話＋SMS</li>
+      <li>月額：2,970円</li>
+      <li>通信品質：非常に安定（ドコモ回線）</li>
+    </ul>
+
+    <p>
+      高画質でYouTubeを見る人でも安心ですが、  
+      見る時間が長いと30GBを超える可能性があります。
+    </p>
+
+    <h3>楽天モバイル</h3>
+    <ul>
+      <li>Rakuten最強プラン（従量制）</li>
+      <li>20GB超：2,980円 / 月</li>
+    </ul>
+
+    <p>
+      データ無制限に近い使い方が可能ですが、  
+      <strong>エリアによる通信品質の差</strong>には注意が必要です。
+    </p>
+
+    <h3>UQモバイル</h3>
+    <ul>
+      <li>月額：約3,000〜4,000円</li>
+      <li>通信品質は安定</li>
+    </ul>
+
+    <p>
+      品質重視ですが、  
+      価格面ではやや高めです。
+    </p>
+
+    <h3>povo</h3>
+    <ul>
+      <li>30GB 音声通話＋SMS</li>
+      <li>月額：2,780円</li>
+    </ul>
+
+    <p>
+      必要な分だけトッピングできるのが特徴ですが、  
+      YouTube中心だと定期的な課金が必要になります。
+    </p>
+
+    <h2>目的別おすすめ</h2>
+
+    <h3>YouTubeをとにかく安く使いたい人</h3>
+    <p>
+      <strong>BIGLOBEモバイル</strong><br>
+      カウントフリー対応で、動画視聴が圧倒的に安い。
+    </p>
+
+    <h3>通信品質を最優先したい人</h3>
+    <p>
+      <strong>ahamo / UQモバイル</strong><br>
+      高画質視聴でも安定した通信が可能。
+    </p>
+
+    <h2>まとめ</h2>
+    <ul>
+      <li>YouTubeのカウントフリー対応はBIGLOBEモバイルのみ</li>
+      <li>動画中心なら通信量を気にせず使える</li>
+      <li>通信品質重視なら大容量プランも選択肢</li>
+    </ul>
+
+    <CTABox
+      title="YouTubeをギガを気にせず使いたい人向け"
+      description="YouTube・ABEMA・U-NEXTがカウントフリー。動画中心なら最強クラスのコスパ。"
+      buttonText="BIGLOBEモバイルを公式で確認"
+      href="ここにBIGLOBEモバイルのアフィリエイトリンク"
+    />
+  </article>
+
+  <RelatedArticles articles={relatedArticles} />
+</ArticleLayout>
