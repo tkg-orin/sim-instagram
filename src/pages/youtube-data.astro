@@ -3,6 +3,25 @@ import ArticleLayout from "../layouts/ArticleLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import RelatedArticles from "../components/RelatedArticles.astro";
+
+const relatedArticles = [
+  {
+    title: "YouTubeの格安SIM紹介",
+    href: "/youtube-sim",
+    description: "YouTubeユーザにとっての最適なプランを紹介。"
+  },
+  {
+    title: "Instagramのデータ消費について",
+	description: "インスタはどれくらいギガを使う？インスタのギガ消費量と削減方法を提示。",
+	href: "/instagram-data"
+  },
+  {
+    title: "X（旧Twitter）のデータ消費について",
+	description: "X（旧Twitter）はどれくらいギガを使う？X（旧Twitter）のギガ消費量と削減方法を提示。",
+	href: "/x-data"
+  }
+];
 ---
 
 <ArticleLayout
@@ -222,4 +241,5 @@ import Breadcrumb from "../components/Breadcrumb.astro";
       おすすめの格安SIMは次の記事で詳しく紹介します。私自身使用している最強キャリアもご紹介！！
     </p>
   </article>
+  <RelatedArticles articles={relatedArticles} />
 </ArticleLayout>
