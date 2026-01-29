@@ -1,0 +1,183 @@
+---
+import ArticleLayout from "../layouts/ArticleLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import RelatedArticles from "../components/RelatedArticles.astro";
+import CTAButton from "../components/CTAButton.astro";
+import CTABox from "../components/CTABox.astro";
+
+const relatedArticles = [
+  {
+    title: "Instagramのデータ消費について",
+	description: "インスタはどれくらいギガを使う？インスタのギガ消費量と削減方法を提示。",
+	href: "/instagram-data"
+  }
+];
+---
+
+<ArticleLayout
+  title="Instagramユーザー向け格安SIM比較｜30GB使うならどれが安い？"
+  description="Instagramを月30GB使う人向けに、カウントフリー対応の格安SIMと料金を比較。LinksMate・NUROモバイル・ahamo・楽天モバイルなどを徹底解説。"
+>
+
+  <Header slot="header" />
+  <Footer slot="footer" />
+
+  <Breadcrumb current="Instagramの格安SIM紹介" />
+
+  <article>
+    <h1>Instagramユーザー向け格安SIM比較</h1>
+
+    <p>
+      Instagramは写真・動画・リールの利用が多く、<br>
+      気づかないうちに<strong>月30GB以上</strong>使ってしまう人も少なくありません。
+    </p>
+
+    <p>
+      この記事では、<strong>インスタを月30GB利用する前提</strong>で、<br>
+      本当にコスパの良い格安SIMを比較します。
+    </p>
+
+    <h2>今回の比較条件</h2>
+    <ul>
+      <li>Instagram：30GB / 月</li>
+      <li>その他通信（Web・LINE等）：1GB / 月</li>
+      <li>音声通話＋SMSプラン</li>
+    </ul>
+
+    <h2>カウントフリーとは？</h2>
+    <p>
+      カウントフリーとは、<strong>特定のアプリの通信量を大幅に減算またはノーカウント</strong>
+      にする仕組みです。
+    </p>
+
+    <p>
+      Instagramのような通信量が多いSNSでは、
+      <strong>実質の通信量を1/10以下</strong>に抑えられるケースもあり、
+      非常にコスパが高いのが特徴です。
+    </p>
+
+    <h2>格安SIM別 料金・特徴比較</h2>
+
+    <h3>LinksMate（カウントフリー）</h3>
+    <ul>
+      <li>5GB 音声通話＋SMS</li>
+      <li>カウントフリーオプション対応（Instagram / X / Facebook 等）</li>
+      <li>月額：約1,700円</li>
+    </ul>
+
+    <p>
+      カウントフリーを利用すると、<br>
+      <strong>Instagram 30GB → 実質 約3GB相当</strong>になります。
+    </p>
+
+    <p>
+      最低限の通信量で運用できるため、<br>
+      <strong>とにかく安く抑えたい人向け</strong>です。
+    </p>
+
+    <p><strong>注意点：</strong>一部エリアで通信が不安定になる場合あり</p>
+
+    <h3>NUROモバイル（カウントフリー）</h3>
+    <ul>
+      <li>NEOプラン 25GB 音声通話＋SMS</li>
+      <li>LINE / X / Instagram / TikTok がノーカウント</li>
+      <li>月額：約2,700円</li>
+    </ul>
+    <CTAButton
+        href="ここにNUROモバイルのアフィリリンク"
+        label="NUROモバイル公式サイトで料金を確認する"
+        note="※最新の料金・キャンペーンは公式サイトをご確認ください"
+    />
+    <p>
+      カウントフリー対象が広く、<br>
+      Instagram 30GB + その他1GBでも<strong>25GB以内で収まる</strong>ケースが多いです。
+    </p>
+
+    <p>
+      <strong>通信品質が比較的安定</strong>している点も強みで、<br>
+      安さと安心感のバランスが取れています。
+    </p>
+
+    <h3>ahamo</h3>
+    <ul>
+      <li>30GB 音声通話＋SMS</li>
+      <li>月額：2,970円</li>
+      <li>カウントフリーなし</li>
+    </ul>
+
+    <p>
+      ドコモ回線で<strong>通信品質は非常に安定</strong>。<br>
+      ただし、Instagramを多用すると30GBを超える可能性があります。
+    </p>
+
+    <h3>楽天モバイル</h3>
+    <ul>
+      <li>Rakuten最強プラン（従量制）</li>
+      <li>20GB超：2,980円 / 月</li>
+    </ul>
+
+    <p>
+      データ利用量に応じて料金が変動します。
+    </p>
+
+    <p>
+      Instagram 30GB利用時は<strong>最大料金帯</strong>となり、<br>
+      エリアによっては通信が不安定な点に注意が必要です。
+    </p>
+
+    <h3>UQモバイル</h3>
+    <ul>
+      <li>月額：約3,000〜4,000円</li>
+      <li>通信品質は安定</li>
+    </ul>
+
+    <p>
+      品質重視ですが、<br>
+      価格面では格安SIMの中ではやや高めです。
+    </p>
+
+    <h3>povo</h3>
+    <ul>
+      <li>30GB 音声通話＋SMS</li>
+      <li>月額：2,780円</li>
+      <li>通信品質は安定</li>
+    </ul>
+
+    <h2>目的別おすすめ</h2>
+
+    <h3>とにかく安くしたい人</h3>
+    <p>
+      <strong>LinksMate</strong><br>
+      Wi-Fi併用が多く、通信費を最小限に抑えたい人向け。
+    </p>
+
+    <h3>バランス重視で安心したい人</h3>
+    <p>
+      <strong>NUROモバイル</strong><br>
+      通信品質の安定＋SNS使い放題の安心感が魅力。
+    </p>
+
+    <h2>まとめ</h2>
+    <ul>
+      <li>Instagramを30GB使うならカウントフリーは必須級</li>
+      <li>最安重視ならLinksMate</li>
+      <li>安定性と使い勝手ならNUROモバイル</li>
+    </ul>
+    <CTABox
+      title="とにかく安くInstagramを使いたい人向け"
+      description="カウントフリーでインスタ通信量を90%削減。Wi-Fi中心の人なら最安クラス。"
+      buttonText="LinksMateを公式で確認"
+      href="https://linksmate.jp/"
+    />
+
+    <CTABox
+      title="通信品質も妥協したくない人向け"
+      description="インスタ・X・TikTokがカウントフリー。安定性と安心感を重視するならこれ。"
+      buttonText="NUROモバイルを公式で確認"
+      href="https://mobile.nuro.jp/"
+    />
+  </article>
+  <RelatedArticles articles={relatedArticles} />
+</ArticleLayout>

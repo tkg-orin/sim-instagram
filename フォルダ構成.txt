@@ -1,0 +1,24 @@
+sim-instagram/
+├─ src/
+│  ├─ pages/
+│  │  ├─ index.astro        # トップ（検索流入）
+│  │  ├─ compare.astro      # 比較表（収益）
+│  │  ├─ data.astro         # Instagramのデータ消費解説
+│  │  ├─ save.astro         # データ節約方法
+│  │  └─ about.astro        # 信頼用（運営者情報）
+│  │
+│  ├─ layouts/
+│  │  └─ BaseLayout.astro   # 共通レイアウト
+│  │
+│  ├─ data/
+│  │  └─ sim.csv            # 比較データ
+│  │
+│  └─ components/
+│     └─ SimTable.astro     # 比較表コンポーネント（任意）
+│
+├─ public/
+│  └─ favicon.svg
+│
+├─ astro.config.mjs
+├─ package.json
+└─ README.md

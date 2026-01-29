@@ -1,0 +1,56 @@
+---
+import sims from "../data/sims.json";
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>格安SIMでInstagramを使いすぎる人向け｜データ消費とおすすめプラン</title>
+    <meta
+      name="description"
+      content="Instagramのデータ消費で通信制限に悩んだ実体験から、格安SIMのおすすめプランを比較します。"
+    />
+  </head>
+
+  <body>
+    <h1>格安SIMでInstagramを快適に使う方法</h1>
+
+    <!-- 導入文 -->
+    <p>同棲をきっかけに、彼女が電車通勤になりました。</p>
+    <p>
+      通勤中にInstagramを見るようになった結果、5GB契約では
+      月の中旬に通信制限がかかるようになってしまいました。
+    </p>
+
+    <h2>Instagramはどれくらい通信量を使う？</h2>
+    <p>
+      Instagramは画像・動画が多く、1時間あたり約600MBの
+      データ通信を消費すると言われています。
+    </p>
+
+    <h2>格安SIM別｜Instagram利用時の比較</h2>
+
+    <table border="1">
+      <tr>
+        <th>SIM名</th>
+        <th>月額料金</th>
+        <th>特徴</th>
+      </tr>
+
+      {sims.map(sim => (
+        <tr>
+          <td>{sim.name}</td>
+          <td>{sim.monthly_price}円</td>
+          <td>{sim.feature}</td>
+        </tr>
+      ))}
+    </table>
+
+    <h2>調べた結果おすすめだった格安SIM</h2>
+    <ul>
+      <li>NUROモバイル：コスパ重視</li>
+      <li>LinksMate：SNS特化のカウントフリー</li>
+      <li>LINEMO：通信速度の安定性</li>
+    </ul>
+  </body>
+</html>

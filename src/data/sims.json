@@ -1,0 +1,17 @@
+[
+  {
+    "name": "NUROモバイル",
+    "monthly_price": 2690,
+    "feature": "コスパが良く、普段使いに向いている"
+  },
+  {
+    "name": "LinksMate",
+    "monthly_price": 517,
+    "feature": "InstagramなどSNSのカウントフリーが強い"
+  },
+  {
+    "name": "LINEMO",
+    "monthly_price": 2728,
+    "feature": "通信速度が安定している"
+  }
+]

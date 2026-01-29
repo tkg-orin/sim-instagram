@@ -1,0 +1,45 @@
+---
+const { title, description, href } = Astro.props;
+---
+
+<a href={href} class="card">
+  <h2>{title}</h2>
+  <p>{description}</p>
+  <span class="card-link">詳しく見る →</span>
+</a>
+
+<style>
+.card {
+	display: block;
+	background: #ffffff;
+	padding: 20px;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+	margin-bottom: 16px;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+	margin: 0 0 8px;
+	font-size: 1.3rem;
+	border-left: none;
+	padding-left: 0;
+}
+
+.card p {
+	margin: 0 0 12px;
+	color: #4b5563;
+	font-size: 0.95rem;
+}
+
+.card-link {
+	color: #4f46e5;
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+</style>

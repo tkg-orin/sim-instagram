@@ -1,0 +1,22 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  note?: string;
+}
+
+const { href, label, note } = Astro.props;
+---
+
+<div class="cta-box">
+  <a
+    href={href}
+    class="cta-button"
+    target="_blank"
+    rel="nofollow noopener"
+  >
+    {label}
+  </a>
+
+  {note && <p class="cta-note">{note}</p>}
+</div>

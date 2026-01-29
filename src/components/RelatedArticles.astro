@@ -1,0 +1,73 @@
+---
+/**
+ * props:
+ * - heading?: string
+ * - articles: {
+ *     title: string
+ *     description: string
+ *     href: string
+ *   }[]
+ */
+const {
+  heading = "他のSNSもチェック",
+  articles
+} = Astro.props;
+---
+
+<section class="related">
+  <h2>{heading}</h2>
+
+  <div class="related-grid">
+    {articles.map(article => (
+      <a href={article.href} class="related-card">
+        <h3>{article.title}</h3>
+        <p>{article.description}</p>
+        <span>詳しく見る →</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+.related {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.related-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.related-card {
+  display: block;
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.related-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.related-card p {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.related-card span {
+  color: #4f46e5;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+</style>

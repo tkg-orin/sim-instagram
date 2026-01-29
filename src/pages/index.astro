@@ -1,0 +1,49 @@
+---
+import ArticleCard from "../components/ArticleCard.astro";
+---
+
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<title>格安SIM × SNS通信量ガイド</title>
+	<link rel="stylesheet" href="/styles/article.css" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="article">
+			<h1>格安SIM × SNS通信量ガイド</h1>
+			<p>
+				Instagram・YouTube・Xなど、<strong>SNSをよく使う人向けに</strong><br>
+				通信制限に悩まない格安SIMを分かりやすくまとめています。
+			</p>
+
+			<hr>
+
+			<ArticleCard
+				title="Instagramのデータ消費について"
+				description="インスタはどれくらいギガを使う？インスタのギガ消費量と削減方法を提示。"
+				href="/instagram-data"
+			/>
+
+			<ArticleCard
+				title="Instagramの格安SIM紹介"
+				description="インスタユーザにとっての最適なプランを紹介。"
+				href="/instagram-sim"
+			/>
+
+			<ArticleCard
+				title="YouTubeのデータ消費について"
+				description="YouTubeはどれくらいギガを使う？YouTubeのギガ消費量と削減方法を提示。"
+				href="/youtube-data"
+			/>
+
+			<ArticleCard
+				title="X（旧Twitter）のデータ消費について"
+				description="X（旧Twitter）はどれくらいギガを使う？X（旧Twitter）のギガ消費量と削減方法を提示。"
+				href="/x-data"
+			/>
+		</div>
+	</div>
+</body>
+</html>
