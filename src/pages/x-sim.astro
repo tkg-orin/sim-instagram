@@ -1,0 +1,163 @@
+---
+import ArticleLayout from "../layouts/ArticleLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import RelatedArticles from "../components/RelatedArticles.astro";
+import CTAButton from "../components/CTAButton.astro";
+import CTABox from "../components/CTABox.astro";
+
+const relatedArticles = [
+  {
+    title: "X（旧Twitter）のデータ消費について",
+    description: "X（旧Twitter）はどれくらいギガを使う？通信量の目安と節約方法を解説。",
+    href: "/x-data"
+  }
+];
+---
+
+<ArticleLayout
+  title="X（旧Twitter）ユーザー向け格安SIM比較｜最小ギガで安く使うならどれ？"
+  description="X（旧Twitter）は通信量が少なめ。カウントフリーは必要？LinksMate・NUROモバイルを中心に、Xユーザー向けの最適な格安SIMを解説します。"
+>
+  <Header slot="header" />
+  <Footer slot="footer" />
+  <Breadcrumb current="X（旧Twitter）の格安SIM紹介" />
+
+  <article>
+    <h1>X（旧Twitter）ユーザー向け格安SIM比較</h1>
+
+    <p>
+      X（旧Twitter）はテキスト中心のSNSのため、<br />
+      InstagramやYouTubeと比べて<strong>通信量はかなり少なめ</strong>です。
+    </p>
+
+    <p>
+      そのため、Xユーザーの場合は<br />
+      <strong>必ずしもカウントフリーが必須というわけではありません。</strong>
+    </p>
+
+    <p>
+      この記事では、<br />
+      「とにかく安く使いたい人」「安心感も欲しい人」それぞれに向けて、<br />
+      Xに最適な格安SIMを紹介します。
+    </p>
+
+    <h2>X（旧Twitter）はどれくらい通信量が少ない？</h2>
+
+    <p>
+      Xはタイムライン閲覧・返信が中心で、<br />
+      <strong>月3〜5GB程度</strong>で収まる人も珍しくありません。
+    </p>
+
+    <ul>
+      <li>テキスト中心：通信量はかなり少ない</li>
+      <li>画像多め：多少増えるが問題なし</li>
+      <li>動画多用：この場合のみ注意</li>
+    </ul>
+
+    <p>
+      動画をほとんど見ない人であれば、<br />
+      <strong>小容量プラン＋低価格</strong>が最適解になります。
+    </p>
+
+    <h2>カウントフリーは必要？</h2>
+
+    <p>
+      結論として、Xだけを使うなら<br />
+      <strong>カウントフリーは「必須ではないが、あれば安心」</strong>です。
+    </p>
+
+    <p>
+      通信量を極限まで抑えたい人や、<br />
+      他のSNSも併用する人にはカウントフリーが向いています。
+    </p>
+
+    <h2>格安SIM別 料金・特徴比較</h2>
+
+    <h3>LinksMate（カウントフリー）</h3>
+    <ul>
+      <li>5GB 音声通話＋SMS</li>
+      <li>カウントフリーオプション対応（Instagram / X / Facebook 等）</li>
+      <li>月額：約1,700円</li>
+    </ul>
+
+    <p>
+      Xの通信量がほぼカウントされないため、<br />
+      <strong>実質1〜2GB運用</strong>も可能です。
+    </p>
+
+    <p>
+      最低限の通信量で運用できるため、<br />
+      <strong>とにかく安く抑えたい人向け</strong>です。
+    </p>
+
+    <p><strong>注意点：</strong>一部エリアで通信が不安定になる場合あり</p>
+
+    <CTAButton
+      href="https://linksmate.jp/"
+      label="LinksMateを公式サイトで確認する"
+      note="※最新の料金・キャンペーンは公式サイトをご確認ください"
+    />
+
+    <h3>NUROモバイル（カウントフリー）</h3>
+    <ul>
+      <li>NEOプラン 25GB 音声通話＋SMS</li>
+      <li>LINE / X / Instagram / TikTok がノーカウント</li>
+      <li>月額：約2,700円</li>
+    </ul>
+
+    <p>
+      Xだけでなく、<br />
+      他のSNSもまとめて使う人に向いたプランです。
+    </p>
+
+    <p>
+      通信品質も比較的安定しており、<br />
+      <strong>安心感を重視したい人</strong>におすすめです。
+    </p>
+
+    <CTAButton
+      href="https://mobile.nuro.jp/"
+      label="NUROモバイルを公式サイトで確認する"
+      note="※最新の料金・キャンペーンは公式サイトをご確認ください"
+    />
+
+    <h2>目的別おすすめ</h2>
+
+    <h3>とにかく安くXを使いたい人</h3>
+    <p>
+      <strong>LinksMate</strong><br />
+      X中心・Wi-Fi併用なら最安クラス。
+    </p>
+
+    <h3>SNS全体を快適に使いたい人</h3>
+    <p>
+      <strong>NUROモバイル</strong><br />
+      複数SNSを使うなら安心感が高い。
+    </p>
+
+    <h2>まとめ</h2>
+    <ul>
+      <li>X（旧Twitter）は通信量が少ないため小容量で十分</li>
+      <li>最安重視ならLinksMate</li>
+      <li>SNS併用・安定性重視ならNUROモバイル</li>
+    </ul>
+
+    <CTABox
+      title="とにかく安くX（旧Twitter）を使いたい人向け"
+      description="カウントフリー対応で通信量を最小化。X中心ならこれで十分。"
+      buttonText="LinksMateを公式で確認"
+      href="https://linksmate.jp/"
+    />
+
+    <CTABox
+      title="SNS全体を快適に使いたい人向け"
+      description="X・Instagram・TikTokがノーカウント。安心感重視ならこちら。"
+      buttonText="NUROモバイルを公式で確認"
+      href="https://mobile.nuro.jp/"
+    />
+  </article>
+
+  <RelatedArticles articles={relatedArticles} />
+</ArticleLayout>
