@@ -1,0 +1,200 @@
+---
+
+import ArticleLayout from "../layouts/ArticleLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import SNSCompareTable from "../components/SNSCompareTable.astro";
+import RelatedArticles from "../components/RelatedArticles.astro";
+
+const relatedArticles = [
+{
+title: "Instagramのデータ消費について",
+href: "/instagram-data",
+description: "インスタはどれくらいギガを使う？通信量の目安と節約方法を解説。"
+},
+{
+title: "YouTubeのデータ消費について",
+description: "YouTubeはどれくらいギガを使う？画質別の通信量を解説。",
+href: "/youtube-data"
+},
+{
+title: "X（旧Twitter）の格安SIM紹介",
+description: "X（旧Twitter）にとっての最適なプランを紹介。",
+href: "/x-sim"
+}
+];
+--
+
+<ArticleLayout
+title="X（旧Twitter）のデータ通信量はどれくらい？1時間あたりの目安と節約方法"
+description="X（旧Twitter）のデータ通信量を画像・動画・スペース別に解説。1時間あたりの消費量やギガ節約方法、格安SIM選びまで紹介します。"
+
+>
+
+  <Header slot="header" />
+  <Footer slot="footer" />
+
+  <Breadcrumb current="X（旧Twitter）のデータ通信量" />
+
+  <article>
+    <h1>X（旧Twitter）のデータ通信量はどれくらい？1時間あたりの目安と節約方法</h1>
+
+```
+<p>
+  X（旧Twitter）を見ているだけなのに、
+  思ったよりギガが減っている……
+  そんな経験はありませんか？
+</p>
+
+<p>
+  テキスト中心のSNSというイメージが強いXですが、
+  実際には画像・動画・広告・スペース（音声）などにより、
+  使い方次第で通信量は大きく変わります。
+</p>
+
+<p>
+  本記事では、X（旧Twitter）の通信量の目安、
+  1時間あたりの消費量、通信量を抑える設定、
+  さらにおすすめの格安SIMまで分かりやすく解説します。
+</p>
+
+<h2>結論：X（旧Twitter）の通信量は比較的少なめ</h2>
+
+<p>
+  結論から言うと、XはSNSの中でも
+  <strong>通信量が少なめ</strong>な部類です。
+</p>
+
+<p>
+  テキスト中心の閲覧であれば、
+  <strong>1時間あたり50〜150MB程度</strong>
+  に収まることが多いです。
+</p>
+
+<p>ただし、以下の使い方をしている場合は注意が必要です。</p>
+
+<ul>
+  <li>動画付きポストを頻繁に視聴</li>
+  <li>画像を多く含むタイムライン閲覧</li>
+  <li>スペース（音声配信）を長時間利用</li>
+</ul>
+
+<h2>X（旧Twitter）のデータ通信量の目安【一覧】</h2>
+
+<h3>テキスト中心の閲覧</h3>
+<ul>
+  <li>10分閲覧：約5〜15MB</li>
+  <li>1時間閲覧：約30〜80MB</li>
+</ul>
+
+<h3>画像付きポストの閲覧</h3>
+<ul>
+  <li>画像1枚：約1〜2MB</li>
+  <li>画像多めの1時間閲覧：約100〜200MB</li>
+</ul>
+
+<h3>動画付きポストの閲覧</h3>
+<ul>
+  <li>短い動画1本：約5〜20MB</li>
+  <li>動画中心の1時間閲覧：約300〜500MB</li>
+</ul>
+
+<h3>スペース（音声配信）</h3>
+<ul>
+  <li>1時間視聴：約50〜100MB</li>
+</ul>
+
+<h2>X（旧Twitter）を1時間使うと何GB消費する？</h2>
+
+<h3>通常利用（テキスト＋画像）</h3>
+<p>
+  タイムライン閲覧や返信中心であれば、
+  <strong>1時間あたり約50〜150MB</strong>程度です。
+</p>
+
+<h3>動画多めの利用</h3>
+<p>
+  動画ポストを多く再生すると、
+  <strong>1時間で300MB以上</strong>
+  消費するケースもあります。
+</p>
+
+<h3>通信量が増えやすいケース</h3>
+<ul>
+  <li>動画の自動再生がオン</li>
+  <li>高画質設定のまま利用</li>
+  <li>長時間のスペース視聴</li>
+</ul>
+
+<h2>他のSNSと比べて通信量は多い？</h2>
+
+<p>
+  Xは他の主要SNSと比べると、
+  通信量はかなり控えめです。
+</p>
+
+<ul>
+  <li>X（旧Twitter）：テキスト中心で少なめ</li>
+  <li>Instagram：動画・リールで多い</li>
+  <li>TikTok：動画特化で非常に多い</li>
+  <li>YouTube：長時間視聴で最も多い</li>
+</ul>
+
+<SNSCompareTable />
+
+<h2>X（旧Twitter）の通信量を節約する方法</h2>
+
+<h3>動画の自動再生をオフにする</h3>
+<p>
+  設定から「動画の自動再生」をオフにすると、
+  通信量を大幅に抑えられます。
+</p>
+
+<h3>画質設定を下げる</h3>
+<p>
+  高画質動画の再生を制限することで、
+  無駄なギガ消費を防げます。
+</p>
+
+<h3>Wi-Fi環境で動画・スペースを利用</h3>
+<p>
+  動画視聴やスペース利用は、
+  できるだけWi-Fi接続時に行いましょう。
+</p>
+
+<h2>X（旧Twitter）中心の人におすすめの格安SIM</h2>
+
+<p>
+  X中心の使い方であれば、
+  大容量プランは必ずしも必要ありません。
+</p>
+
+<ul>
+  <li>ライトユーザー：5〜10GBプラン</li>
+  <li>SNS多用：カウントフリー対応SIM</li>
+  <li>通信品質重視：回線品質の安定した事業者</li>
+</ul>
+
+<p>
+  使い方に合ったSIMを選べば、
+  月々の通信費を大きく節約できます。
+</p>
+
+<h2>まとめ</h2>
+<ul>
+  <li>X（旧Twitter）はSNSの中でも通信量が少なめ</li>
+  <li>テキスト中心なら1時間50〜150MB程度</li>
+  <li>動画設定の見直しでさらに節約可能</li>
+</ul>
+
+<p>
+  Xを快適に使いながら通信費を抑えたい人は、
+  自分の使い方に合った格安SIMを検討してみてください。
+</p>
+```
+
+  </article>
+
+  <RelatedArticles articles={relatedArticles} />
+</ArticleLayout>
