@@ -2,61 +2,95 @@
 import ArticleCard from "../components/ArticleCard.astro";
 ---
 
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="utf-8" />
-	<title>格安SIM × SNS通信量ガイド</title>
-	<link rel="stylesheet" href="/styles/article.css" />
-	<meta name="google-site-verification" content="hT5dTorxw0azP7oEIv_Hgkaj3VazytHA6t30LqZQZ4E" />
+  <meta charset="utf-8" />
+  <title>格安SIM × SNS通信量ガイド</title>
+  <meta name="description" content="Instagram・YouTube・XなどSNSをよく使う人向けに、通信量の目安と最適な格安SIMをシミュレーションで診断できるサイトです。" />
+  <meta name="google-site-verification" content="hT5dTorxw0azP7oEIv_Hgkaj3VazytHA6t30LqZQZ4E" />
+  <link rel="stylesheet" href="/styles/article.css" />
 </head>
 
 <body>
-	<div class="container">
-		<div class="article">
-			<h1>格安SIM × SNS通信量ガイド</h1>
-			<p>
-				Instagram・YouTube・Xなど、<strong>SNSをよく使う人向けに</strong><br>
-				通信制限に悩まない格安SIMを分かりやすくまとめています。
-			</p>
+  <div class="container">
 
-			<hr>
+    <!-- =====================
+         ヒーローエリア
+    ====================== -->
+    <header class="article">
+      <h1>格安SIM × SNS通信量ガイド</h1>
+      <p>
+        Instagram・YouTube・Xなど、<strong>SNSをよく使う人向け</strong>に<br>
+        「どれくらいギガを使う？」「どの格安SIMが最適？」を<br>
+        <strong>シミュレーションで一発診断</strong>できます。
+      </p>
+    </header>
 
-			<ArticleCard
-				title="Instagramのデータ消費について"
-				description="インスタはどれくらいギガを使う？インスタのギガ消費量と削減方法を提示。"
-				href="/instagram-data"
-			/>
+    <hr />
 
-			<ArticleCard
-				title="Instagramの格安SIM紹介"
-				description="インスタユーザにとっての最適なプランを紹介。"
-				href="/instagram-sim"
-			/>
+    <!-- =====================
+         メイン：シミュレータ
+    ====================== -->
+    <section class="article">
+      <h2>📊 SNS通信量シミュレーター</h2>
+      <p>
+        使っているSNSと利用時間を選ぶだけで、<br>
+        <strong>最適なキャリア・カウントフリープラン・概算料金</strong>を診断します。
+      </p>
 
-			<ArticleCard
-				title="YouTubeのデータ消費について"
-				description="YouTubeはどれくらいギガを使う？YouTubeのギガ消費量と削減方法を提示。"
-				href="/youtube-data"
-			/>
+      <div class="simulator-box">
+        <a class="simulator-link" href="/simulator">
+          ▶ 今すぐ通信量を診断する
+        </a>
+      </div>
+    </section>
 
-			<ArticleCard
-				title="YouTubeの格安SIM紹介"
-				description="YouTubeユーザにとっての最適なプランを紹介→個人的最強SIM！！"
-				href="/youtube-sim"
-			/>
+    <hr />
 
-			<ArticleCard
-				title="X（旧Twitter）のデータ消費について"
-				description="X（旧Twitter）はどれくらいギガを使う？X（旧Twitter）のギガ消費量と削減方法を提示。"
-				href="/x-data"
-			/>
-			
-			<ArticleCard
-				title="X（旧Twitter）の格安SIM紹介"
-				description="X（旧Twitter）にとっての最適なプランを紹介。"
-				href="/x-sim"
-			/>
-		</div>
-	</div>
+    <!-- =====================
+         サブ：解説記事
+    ====================== -->
+    <section class="article">
+      <h2>📘 SNS別 通信量・格安SIM解説</h2>
+
+      <ArticleCard
+        title="Instagramのデータ消費について"
+        description="インスタはどれくらいギガを使う？通信量の目安と節約方法を解説。"
+        href="/instagram-data"
+      />
+
+      <ArticleCard
+        title="Instagramに最適な格安SIM"
+        description="インスタをたくさん使う人向けのおすすめ格安SIMを紹介。"
+        href="/instagram-sim"
+      />
+
+      <ArticleCard
+        title="YouTubeのデータ消費について"
+        description="YouTubeはどれくらいギガを消費する？画質別の通信量を解説。"
+        href="/youtube-data"
+      />
+
+      <ArticleCard
+        title="YouTubeに最適な格安SIM"
+        description="動画視聴が多い人向けの最強SIMプランを紹介。"
+        href="/youtube-sim"
+      />
+
+      <ArticleCard
+        title="X（旧Twitter）のデータ消費について"
+        description="Xはどれくらいギガを使う？画像・動画込みで解説。"
+        href="/x-data"
+      />
+
+      <ArticleCard
+        title="X（旧Twitter）に最適な格安SIM"
+        description="X中心ユーザー向けのおすすめ格安SIMを紹介。"
+        href="/x-sim"
+      />
+    </section>
+
+  </div>
 </body>
 </html>

@@ -1,0 +1,179 @@
+---
+export const prerender = false;
+
+import ArticleLayout from "../layouts/ArticleLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import CTAButton from "../components/CTAButton.astro";
+
+const carrierKey = Astro.url.searchParams.get("carrier");
+const priceParam = Astro.url.searchParams.get("price");
+
+const carrierMap = {
+  linksmate: {
+    name: "LinksMate",
+    plan: "5GB 音声通話＋SMS",
+    countfree: "対応（Instagram / X / TikTok）",
+    defaultPrice: "1,700",
+    link: "https://linksmate.jp/",
+    reason:
+      "SNS中心の利用で通信量を抑えたい人に最適。カウントフリーでInstagram/X/TikTok を効率的に使えます。",
+    type: ["sns"],
+  },
+  nuro: {
+    name: "NUROモバイル",
+    plan: "NEOプラン 25GB",
+    countfree: "対応（X / Instagram / TikTok）",
+    defaultPrice: "2,699",
+    link: "https://mobile.nuro.jp/",
+    reason:
+      "SNSを快適に使いつつも通信品質を重視したい人向けのバランス型SIMです。",
+    type: ["sns"],
+  },
+  biglobe: {
+    name: "BIGLOBEモバイル",
+    plan: "音声通話＋データプラン（YouTube対応）",
+    countfree: "対応（YouTube/ABEMA/U-NEXT）",
+    defaultPrice: "1,700",
+    link: "https://join.biglobe.ne.jp/mobile/",
+    reason:
+      "YouTubeを中心に動画をよく見る人は、カウントフリー対応のBIGLOBEモバイルが最適です。",
+    type: ["youtube"],
+  },
+  ahamo: {
+    name: "ahamo",
+    plan: "30GB 音声通話＋SMS",
+    countfree: "非対応",
+    defaultPrice: "2,970",
+    link: "https://www.ahamo.com/",
+    reason:
+      "ドコモ回線で通信品質が高く、YouTube・SNS・動画混合でも安心して使える安定派SIMです。",
+    type: ["video","mixed"],
+  },
+  rakuten: {
+    name: "楽天モバイル",
+    plan: "Rakuten最強プラン（従量制）",
+    countfree: "非対応",
+    defaultPrice: "0〜3,278",
+    link: "https://network.mobile.rakuten.co.jp/",
+    reason:
+      "月ごとの使用量がばらつく人や、使わない月は安く使いたい人向けの柔軟型SIMです。",
+    type: ["mixed","flex"],
+  },
+  uqmobile: {
+    name: "UQモバイル",
+    plan: "安定回線プラン",
+    countfree: "非対応",
+    defaultPrice: "3,000〜4,000",
+    link: "https://www.uqwimax.jp/mobile/",
+    reason:
+      "KDDI回線で安定性重視の人向け。SNS・動画いずれも安心の通信品質です。",
+    type: ["video","mixed","sns"],
+  },
+  povo: {
+    name: "povo",
+    plan: "トッピング制",
+    countfree: "非対応",
+    defaultPrice: "0〜2,780",
+    link: "https://povo.jp/",
+    reason:
+      "使いたい月にだけ通信量を買いたい人向け。柔軟性が高く無駄が少ない運用が可能です。",
+    type: ["mixed","flex"],
+  },
+};
+
+const result = carrierKey ? carrierMap[carrierKey] : null;
+const price = priceParam ?? result?.defaultPrice;
+
+// 同じ type を持つ候補全取得
+const similarTypes = result?.type ?? [];
+const candidates = Object.values(carrierMap).filter(
+  (c) => c !== result && similarTypes.some((t) => c.type.includes(t))
+);
+---
+
+<ArticleLayout
+  title="格安SIM診断結果｜あなたに最適なプランはこちら"
+  description="SNS・動画の使い方から判定した、あなたに最適な格安SIMと料金目安を紹介します。"
+>
+  <Header slot="header" />
+  <Footer slot="footer" />
+  <Breadcrumb current="診断結果" />
+
+  <article>
+    <h1>診断結果</h1>
+
+    {!result ? (
+      <p>診断結果が取得できませんでした。もう一度お試しください。</p>
+    ) : (
+      <>
+        <section class="result-card">
+          <span class="badge">最適プラン</span>
+          <h2>{result.name}</h2>
+          <ul>
+            <li>プラン：{result.plan}</li>
+            <li>カウントフリー：{result.countfree}</li>
+            <li>月額目安：約 {price} 円</li>
+          </ul>
+          <p>{result.reason}</p>
+
+          <CTAButton
+            href={result.link}
+            label={`${result.name}を公式サイトで確認する`}
+            note="※最新の料金・キャンペーンは公式サイトをご確認ください"
+          />
+        </section>
+
+        {candidates.length > 0 && (
+          <section class="other-candidates">
+            <h3>あなたの用途に合う他の候補</h3>
+            <ul>
+              {candidates.map((c) => (
+                <li>
+                  <strong>{c.name}</strong>：{c.reason}
+                  <br />
+                  <a class="secondary-cta" href={c.link}>詳細を見る</a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </>
+    )}
+  </article>
+</ArticleLayout>
+
+<style>
+  .result-card {
+    margin: 28px 0;
+    padding: 24px;
+    background: #fafafa;
+    border-radius: 12px;
+  }
+
+  .badge {
+    background: #2563eb;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+  }
+
+  .other-candidates {
+    margin-top: 32px;
+  }
+  .other-candidates ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .other-candidates li {
+    margin-bottom: 16px;
+  }
+  .secondary-cta {
+    display: inline-block;
+    margin-top: 6px;
+    color: #2563eb;
+    font-weight: bold;
+  }
+</style>

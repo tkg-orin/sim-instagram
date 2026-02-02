@@ -1,0 +1,199 @@
+---
+import ArticleLayout from "../layouts/ArticleLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<ArticleLayout
+  title="格安SIM診断｜使い方から最適プランを30秒で判定"
+  description="YouTube・SNS・使い方の傾向から、あなたに最適な格安SIMを診断します。"
+>
+  <Header slot="header" />
+  <Footer slot="footer" />
+  <Breadcrumb current="格安SIM診断" />
+
+  <article>
+    <h1>あなたに最適な格安SIM診断</h1>
+    <p class="lead">
+      普段の使い方を選ぶだけ。<br />
+      <strong>無駄なく・後悔しない格安SIM</strong>を診断します。
+    </p>
+
+    <section class="sim-diagnosis">
+      <h2>📱 かんたん診断（全3問）</h2>
+
+      <!-- STEP 1 -->
+      <div class="step">
+        <h3>STEP 1｜一番よく使うコンテンツ</h3>
+        <div class="options">
+          <button data-app="youtube">YouTube</button>
+          <button data-app="sns">Instagram / TikTok</button>
+          <button data-app="x">X（旧Twitter）</button>
+          <button data-app="none">特定のコンテンツはない</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step">
+        <h3>STEP 2｜外出先（Wi-Fiなし）での利用</h3>
+        <div class="options">
+          <button data-time="short">短時間のみ</button>
+          <button data-time="long">毎日・長時間</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step">
+        <h3>STEP 3｜料金の考え方</h3>
+        <div class="options">
+          <button data-priority="cheap">とにかく安く済ませたい</button>
+          <button data-priority="stable">通信の安定性もある程度重視したい</button>
+          <button data-priority="pay">使った分だけ支払いたい</button>
+        </div>
+      </div>
+
+      <button class="diagnosis-btn" onclick="diagnose()">
+        ▶ 診断結果を見る
+      </button>
+    </section>
+  </article>
+</ArticleLayout>
+
+<!-- ================= JS ================= -->
+<script is:inline>
+  let state = { app: null, time: null, priority: null };
+
+  document.querySelectorAll(".options button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const group = btn.parentElement;
+      group.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      if (btn.dataset.app) state.app = btn.dataset.app;
+      if (btn.dataset.time) state.time = btn.dataset.time;
+      if (btn.dataset.priority) state.priority = btn.dataset.priority;
+    });
+  });
+
+  function diagnose() {
+    const { app, time, priority } = state;
+
+    if (!app || !time || !priority) {
+      alert("すべて選択してください");
+      return;
+    }
+
+    let carrier = "";
+    let price = "";
+
+    /* =========================
+       とにかく安く済ませたい
+    ========================= */
+    if (priority === "cheap") {
+      if (app === "youtube" && time === "long") {
+        carrier = "biglobe";
+        price = "約1,078〜";
+      }
+      else if ((app === "sns" || app === "x") && time === "long") {
+        carrier = "linksmate";
+        price = "約550〜1,700";
+      }
+      else if (app === "none") {
+        carrier = "rakuten";
+        price = "0〜3,278";
+      }
+      else {
+        carrier = "povo";
+        price = "0〜";
+      }
+    }
+
+    /* =========================
+       通信安定性もある程度重視
+    ========================= */
+    else if (priority === "stable") {
+      if (app === "youtube") {
+        carrier = "ahamo";
+        price = "2,970";
+      }
+      else if (app === "sns" || app === "x") {
+        carrier = "nuro";
+        price = "792〜2,699";
+      }
+      else if (time === "long") {
+        carrier = "uqmobile";
+        price = "3,000〜4,000";
+      }
+      else {
+        carrier = "povo";
+        price = "0〜";
+      }
+    }
+
+    /* =========================
+       使った分だけ支払いたい
+    ========================= */
+    else if (priority === "pay") {
+      if (time === "long") {
+        carrier = "rakuten";
+        price = "0〜3,278";
+      } else {
+        carrier = "povo";
+        price = "0〜";
+      }
+    }
+
+    location.href = `/result?carrier=${carrier}&price=${encodeURIComponent(price)}`;
+  }
+</script>
+
+<!-- ================= CSS ================= -->
+<style>
+  .lead {
+    margin-bottom: 24px;
+    color: #555;
+  }
+
+  .sim-diagnosis {
+    background: #f7f8fa;
+    padding: 28px;
+    border-radius: 16px;
+  }
+
+  .step {
+    margin-bottom: 24px;
+  }
+
+  .options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .options button {
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .options button.active {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+  }
+
+  .diagnosis-btn {
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px;
+    font-size: 16px;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+</style>
